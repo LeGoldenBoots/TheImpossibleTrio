@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-96,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "cool sing left"
+		},
+		{
+			"offsets": [
+				-111,
+				-198
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "cool sing right"
+		},
+		{
+			"offsets": [
+				-123,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "cool DOWN note"
+		},
+		{
+			"offsets": [
+				-130,
+				-165
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "cool UP NOTE"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				61,
+				789
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				796
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				57,
+				751
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				110,
+				800
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				70,
+				800
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": true,
+			"name": "Idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "impossible/bambiRemake",
+	"position": [
+		-240,
+		1540
+	],
+	"healthicon": "impossibletrio",
+	"flip_x": false,
+	"healthbar_colors": [
+		194,
+		230,
+		148
+	],
+	"camera_position": [
+		-130,
+		-690
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

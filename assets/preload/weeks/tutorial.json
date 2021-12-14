@@ -1,0 +1,48 @@
+{
+	"songs": [
+		[
+			"The Impossible Trio",
+			"impossibletrio",
+			[
+				194,
+				230,
+				148
+			]
+		],
+		[
+			"Survival",
+			"survival",
+			[
+				33,
+				27,
+				27
+			]
+		],
+		[
+			"AGONY",
+			"agony",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "Your New Week",
+	"weekName": "Custom Week",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": true,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

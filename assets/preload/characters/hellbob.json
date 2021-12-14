@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-96,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "cool sing left"
+		},
+		{
+			"offsets": [
+				-111,
+				-198
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "cool sing right"
+		},
+		{
+			"offsets": [
+				-123,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "cool DOWN note"
+		},
+		{
+			"offsets": [
+				-80,
+				-206
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "cool UP NOTE"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-696
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "bob_LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				11,
+				-696
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "bob_RIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-696
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "bob_DOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-696
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "bob_UP",
+			"indices": []
+		},
+		{
+			"offsets": [
+				10,
+				-696
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "bobismad"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "impossible/survival/hellbob_assets",
+	"position": [
+		-110,
+		-30
+	],
+	"healthicon": "survival",
+	"flip_x": true,
+	"healthbar_colors": [
+		0,
+		0,
+		0
+	],
+	"camera_position": [
+		-130,
+		820
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

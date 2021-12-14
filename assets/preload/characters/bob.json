@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-96,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "cool sing left"
+		},
+		{
+			"offsets": [
+				-111,
+				-198
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "cool sing right"
+		},
+		{
+			"offsets": [
+				-123,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "cool DOWN note"
+		},
+		{
+			"offsets": [
+				-80,
+				-205
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "cool UP NOTE"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-691
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "bob_LEFT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				9,
+				-696
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "bob_RIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-690
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "bob_DOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-690
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "bob_UP",
+			"indices": []
+		},
+		{
+			"offsets": [
+				10,
+				-696
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": true,
+			"name": "bob_idle"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "impossible/bob_asset",
+	"position": [
+		-230,
+		-110
+	],
+	"healthicon": "impossible",
+	"flip_x": true,
+	"healthbar_colors": [
+		194,
+		230,
+		148
+	],
+	"camera_position": [
+		-120,
+		820
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

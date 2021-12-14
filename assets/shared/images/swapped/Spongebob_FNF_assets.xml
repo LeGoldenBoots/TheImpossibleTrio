@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Spongebob_FNF_assets.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Spongbob Sing Down0000" x="0" y="0" width="334" height="385" frameX="0" frameY="-6" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0001" x="0" y="0" width="334" height="385" frameX="0" frameY="-6" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0002" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0003" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0004" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0005" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0006" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0007" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0008" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0009" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0010" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0011" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0012" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Down0013" x="334" y="0" width="317" height="391" frameX="-9" frameY="0" frameWidth="334" frameHeight="391"/>
+	<SubTexture name="Spongbob Sing Left0000" x="651" y="0" width="422" height="416" frameX="0" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0001" x="651" y="0" width="422" height="416" frameX="0" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0002" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0003" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0004" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0005" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0006" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0007" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0008" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0009" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0010" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0011" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0012" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Left0013" x="1073" y="0" width="426" height="416" frameX="-12" frameY="0" frameWidth="438" frameHeight="416"/>
+	<SubTexture name="Spongbob Sing Right0000" x="1499" y="0" width="446" height="398" frameX="-12" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0001" x="1499" y="0" width="446" height="398" frameX="-12" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0002" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0003" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0004" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0005" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0006" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0007" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0008" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0009" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0010" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0011" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0012" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Right0013" x="0" y="416" width="446" height="398" frameX="0" frameY="0" frameWidth="458" frameHeight="398"/>
+	<SubTexture name="Spongbob Sing Up0000" x="446" y="416" width="438" height="410" frameX="-4" frameY="0" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0001" x="446" y="416" width="438" height="410" frameX="-4" frameY="0" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0002" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0003" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0004" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0005" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0006" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0007" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0008" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0009" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0010" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0011" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0012" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob Sing Up0013" x="884" y="416" width="446" height="403" frameX="0" frameY="-7" frameWidth="446" frameHeight="410"/>
+	<SubTexture name="Spongbob idle0000" x="1330" y="416" width="411" height="387" frameX="-22" frameY="-11" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0001" x="1330" y="416" width="411" height="387" frameX="-22" frameY="-11" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0002" x="0" y="826" width="321" height="395" frameX="-33" frameY="-3" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0003" x="0" y="826" width="321" height="395" frameX="-33" frameY="-3" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0004" x="321" y="826" width="297" height="398" frameX="-35" frameY="0" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0005" x="321" y="826" width="297" height="398" frameX="-35" frameY="0" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0006" x="618" y="826" width="297" height="398" frameX="-35" frameY="0" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0007" x="618" y="826" width="297" height="398" frameX="-35" frameY="0" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0008" x="915" y="826" width="386" height="387" frameX="-29" frameY="-11" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0009" x="915" y="826" width="386" height="387" frameX="-29" frameY="-11" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0010" x="1301" y="826" width="431" height="395" frameX="-9" frameY="-3" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0011" x="1301" y="826" width="431" height="395" frameX="-9" frameY="-3" frameWidth="443" frameHeight="398"/>
+	<SubTexture name="Spongbob idle0012" x="0" y="1224" width="443" height="398"/>
+	<SubTexture name="Spongbob idle0013" x="443" y="1224" width="443" height="398"/>
+</TextureAtlas>

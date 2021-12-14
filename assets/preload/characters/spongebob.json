@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-96,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "cool sing left"
+		},
+		{
+			"offsets": [
+				-111,
+				-198
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "cool sing right"
+		},
+		{
+			"offsets": [
+				-123,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "cool DOWN note"
+		},
+		{
+			"offsets": [
+				-130,
+				-165
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "cool UP NOTE"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				65,
+				800
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Spongbob idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				101,
+				816
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Spongbob Sing Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				36,
+				791
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Spongbob Sing Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				64,
+				799
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Spongbob Sing Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				40,
+				800
+			],
+			"anim": "singUP",
+			"fps": 23,
+			"name": "Spongbob Sing Up",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "swapped/Spongebob_FNF_assets",
+	"position": [
+		-440,
+		1390
+	],
+	"healthicon": "swapped",
+	"flip_x": false,
+	"healthbar_colors": [
+		250,
+		212,
+		151
+	],
+	"camera_position": [
+		-80,
+		-680
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

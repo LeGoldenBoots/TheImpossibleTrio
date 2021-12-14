@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-96,
+				-200
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "cool sing left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-111,
+				-198
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "cool sing right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-123,
+				-230
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "cool DOWN note",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-80,
+				-205
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "cool UP NOTE",
+			"indices": []
+		},
+		{
+			"offsets": [
+				7,
+				-696
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				50,
+				-660
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Sing Up"
+		},
+		{
+			"offsets": [
+				30,
+				-819
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Sing Down"
+		},
+		{
+			"offsets": [
+				-85,
+				-729
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Sing Right"
+		},
+		{
+			"offsets": [
+				90,
+				-731
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Sing Left"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "swapped/hellron",
+	"position": [
+		-230,
+		-170
+	],
+	"healthicon": "swapped",
+	"flip_x": false,
+	"healthbar_colors": [
+		250,
+		212,
+		151
+	],
+	"camera_position": [
+		-120,
+		820
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BOBHEALNOTE_assets.png">
+	<!-- Created with Adobe Animate version 19.0.0.326 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue0000" x="0" y="0" width="157" height="177" frameX="0" frameY="0" frameWidth="157" frameHeight="184"/>
+	<SubTexture name="purple0000" x="471" y="367" width="154" height="177" frameX="0" frameY="0" frameWidth="154" frameHeight="183"/>
+	<SubTexture name="red0000" x="0" y="917" width="154" height="177" frameX="0" frameY="0" frameWidth="154" frameHeight="183"/>
+	<SubTexture name="green0000" x="462" y="1283" width="157" height="185" frameX="0" frameY="0" frameWidth="157" frameHeight="191"/>
+</TextureAtlas>

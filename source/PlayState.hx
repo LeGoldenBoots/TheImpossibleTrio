@@ -96,10 +96,15 @@ class PlayState extends MusicBeatState
 	public var boyfriendMap:Map<String, Boyfriend> = new Map();
 	public var dadMap:Map<String, Character> = new Map();
 	public var gfMap:Map<String, Character> = new Map();
+	public var dad1Map:Map<String, Character> = new Map();
+	public var dad2Map:Map<String, Character> = new Map();
+	public var dad3Map:Map<String, Character> = new Map();
 	#else
 	public var boyfriendMap:Map<String, Boyfriend> = new Map<String, Boyfriend>();
 	public var dadMap:Map<String, Character> = new Map<String, Character>();
-	public var gfMap:Map<String, Character> = new Map<String, Character>();
+	public var dad1Map:Map<String, Character> = new Map<String, Character>();
+	public var dad2Map:Map<String, Character> = new Map<String, Character>();
+	public var dad3Map:Map<String, Character> = new Map<String, Character>();
 	#end
 
 	public var BF_X:Float = 770;
@@ -111,6 +116,7 @@ class PlayState extends MusicBeatState
 
 	public var basketballcourt:BGSprite;
 	public var wireBG:BGSprite;
+	public var basketballcourtFront:BGSprite;
 
 	public var testshader:Shaders.GlitchEffect;
 
@@ -176,9 +182,9 @@ class PlayState extends MusicBeatState
 	public var shits:Int = 0;
 	public var curbg:FlxSprite;
 
-	var dad1:Character;
-	var dad3:Character;
-	var dad2:Character;
+	public var dad1:Character;
+	public var dad3:Character;
+	public var dad2:Character;
 
 	var screwedbambi:Character;
 	var pineapplespong:Character;
@@ -739,16 +745,15 @@ class PlayState extends MusicBeatState
 				}
 			case 'basketballcourt': 
 				wireBG = new BGSprite('possible/wireframe/WIREStageBack', -600, -200, 0.9, 0.9);
-				wireBG.visible = false;
 				add(wireBG);
 
 				basketballcourt = new BGSprite('possible/stageback', -600, -200, 0.9, 0.9);
 				add(basketballcourt);
 
-				var stageFront:BGSprite = new BGSprite('possible/stagefront', -650, 600, 0.9, 0.9);
-				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-				stageFront.updateHitbox();
-				add(stageFront);
+				basketballcourtFront = new BGSprite('possible/stagefront', -650, 600, 0.9, 0.9);
+				basketballcourtFront.setGraphicSize(Std.int(basketballcourtFront.width * 1.1));
+				basketballcourtFront.updateHitbox();
+				add(basketballcourtFront);
 
 				if(!ClientPrefs.lowQuality) {
 					var stageCurtains:BGSprite = new BGSprite('possible/stagecurtains', -500, -300, 1.3, 1.3);
@@ -1364,6 +1369,36 @@ class PlayState extends MusicBeatState
 					newGf.alreadyLoaded = false;
 					startCharacterLua(newGf.curCharacter);
 				}
+			case 3:
+				if(!dad1Map.exists(newCharacter)) {
+					var newDad:Character = new Character(0, 0, newCharacter);
+					dad1Map.set(newCharacter, newDad);
+					impossibleGroup.add(newDad);
+					startCharacterPos(newDad, true);
+					newDad.alpha = 0.00001;
+					newDad.alreadyLoaded = false;
+					startCharacterLua(newDad.curCharacter);
+				}
+			case 4:
+				if(!dad2Map.exists(newCharacter)) {
+					var newDad:Character = new Character(0, 0, newCharacter);
+					dad2Map.set(newCharacter, newDad);
+					impossibleGroup.add(newDad);
+					startCharacterPos(newDad, true);
+					newDad.alpha = 0.00001;
+					newDad.alreadyLoaded = false;
+					startCharacterLua(newDad.curCharacter);
+				}
+			case 5:
+				if(!dad3Map.exists(newCharacter)) {
+					var newDad:Character = new Character(0, 0, newCharacter);
+					dad3Map.set(newCharacter, newDad);
+					impossibleGroup.add(newDad);
+					startCharacterPos(newDad, true);
+					newDad.alpha = 0.00001;
+					newDad.alreadyLoaded = false;
+					startCharacterLua(newDad.curCharacter);
+				}
 		}
 	}
 
@@ -1933,6 +1968,12 @@ class PlayState extends MusicBeatState
 						charType = 2;
 					case 'dad' | 'opponent':
 						charType = 1;
+					case 'dad1':
+						charType = 3;
+					case 'dad2':
+						charType = 4;
+					case 'dad3':
+						charType = 5;
 					default:
 						charType = Std.parseInt(event[3]);
 						if(Math.isNaN(charType)) charType = 0;
@@ -2305,6 +2346,26 @@ class PlayState extends MusicBeatState
 		if (SONG.song == 'AGONY' || SONG.song == 'The-Swapped-Trio') {
 			testshader.update(elapsed);
 		}
+
+		switch(SONG.song.toLowerCase())
+			{
+				case 'not-impossible':
+					switch(curStep)
+					{
+						case 575:
+							basketballcourt.visible = false;
+							basketballcourtFront.visible = false;
+						case 831:
+							basketballcourt.visible = true;
+							basketballcourtFront.visible = true;
+						case 1087:
+							basketballcourt.visible = false;
+							basketballcourtFront.visible = false;
+						case 1343:
+							basketballcourt.visible = true;
+							basketballcourtFront.visible = true;
+					}
+			}
 
 
 		if(ratingName == '?') {
@@ -2960,6 +3021,8 @@ class PlayState extends MusicBeatState
 						char = boyfriend;
 					case 'gf' | 'girlfriend':
 						char = gf;
+					case 'garcello':
+						char = dad2;
 					default:
 						var val2:Int = Std.parseInt(value2);
 						if(Math.isNaN(val2)) val2 = 0;
@@ -2967,6 +3030,7 @@ class PlayState extends MusicBeatState
 						switch(val2) {
 							case 1: char = boyfriend;
 							case 2: char = gf;
+							case 3: char = dad2;
 						}
 				}
 				char.playAnim(value1, true);
@@ -3026,6 +3090,12 @@ class PlayState extends MusicBeatState
 						charType = 2;
 					case 'dad' | 'opponent':
 						charType = 1;
+					case 'dad1':
+						charType = 3;
+					case 'dad2':
+						charType = 4;
+					case 'dad3':
+						charType = 5;
 					default:
 						charType = Std.parseInt(value1);
 						if(Math.isNaN(charType)) charType = 0;
@@ -3091,7 +3161,65 @@ class PlayState extends MusicBeatState
 							}
 						}
 						setOnLuas('gfName', gf.curCharacter);
-				}
+					case 3:
+						if(dad1.curCharacter != value2) {
+							if(!dad1Map.exists(value2)) {
+								addCharacterToList(value2, charType);
+							}
+
+							var wasGf:Bool = dad1.curCharacter.startsWith('gf');
+							dad1.visible = false;
+							dad1 = dad1Map.get(value2);
+							if(!dad1.curCharacter.startsWith('gf')) {
+								if(wasGf) {
+									gf.visible = true;
+								}
+							} else {
+								gf.visible = false;
+							}
+							if(!dad1.alreadyLoaded) {
+								dad1.alpha = 1;
+								dad1.alreadyLoaded = true;
+							}
+							dad1.visible = true;
+							iconP2.changeIcon(dad1.healthIcon);
+						}
+						setOnLuas('dad1Name', dad1.curCharacter);
+					case 4:
+						if(dad2.curCharacter != value2) {
+							if(!dad2Map.exists(value2)) {
+								addCharacterToList(value2, charType);
+							}
+
+							var wasGf:Bool = dad2.curCharacter.startsWith('gf');
+							dad2.visible = false;
+							dad2 = dad2Map.get(value2);
+							if(!dad2.alreadyLoaded) {
+								dad2.alpha = 1;
+								dad2.alreadyLoaded = true;
+							}
+							dad2.visible = true;
+							iconP2.changeIcon(dad.healthIcon);
+						}
+						setOnLuas('dad2Name', dad2.curCharacter);
+					case 5:
+						if(dad3.curCharacter != value2) {
+							if(!dad3Map.exists(value2)) {
+								addCharacterToList(value2, charType);
+							}
+
+							var wasGf:Bool = dad3.curCharacter.startsWith('gf');
+							dad3.visible = false;
+							dad3 = dad3Map.get(value2);
+							if(!dad3.alreadyLoaded) {
+								dad3.alpha = 1;
+								dad3.alreadyLoaded = true;
+							}
+							dad3.visible = true;
+							iconP2.changeIcon(dad.healthIcon);
+						}
+						setOnLuas('dad3Name', dad3.curCharacter);
+			}
 				reloadHealthBarColors();
 			
 			case 'BG Freaks Expression':

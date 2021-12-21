@@ -36,8 +36,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-80,
-				-205
+				-130,
+				-165
 			],
 			"anim": "singUP-alt",
 			"fps": 24,
@@ -45,88 +45,77 @@
 			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
-				10,
-				-696
+				-100,
+				-600
 			],
-			"loop": true,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "garcello idle dance"
+			"fps": 24,
+			"name": "Hex crazy idle",
+			"indices": []
 		},
 		{
-			"offsets": [
-				8,
-				-696
-			],
 			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "garcello Sing Note UP"
-		},
-		{
 			"offsets": [
-				9,
-				-696
+				70,
+				-537
 			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "garcello Sing Note RIGHT"
-		},
-		{
-			"offsets": [
-				10,
-				-696
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "garcello Sing Note DOWN"
-		},
-		{
-			"offsets": [
-				10,
-				-695
-			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "garcello Sing Note LEFT"
+			"fps": 24,
+			"name": "Hex crazy left",
+			"indices": []
 		},
 		{
-			"offsets": [
-				10,
-				-695
-			],
-			"indices": [],
-			"fps": 24,
-			"anim": "tightBars",
 			"loop": false,
-			"name": "garcello coolguy"
+			"offsets": [
+				29,
+				-619
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Hex crazy right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-19,
+				-664
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Hex crazy down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-9,
+				-490
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Hex crazy up",
+			"indices": []
 		}
 	],
-	"no_antialiasing": true,
-	"image": "possible/garcellodead_assets",
+	"no_antialiasing": false,
+	"image": "possible/wireframe/Hex_Virus",
 	"position": [
-		-230,
-		-650
+		-10,
+		-470
 	],
 	"healthicon": "possibletrio",
 	"flip_x": false,
 	"healthbar_colors": [
-		194,
-		230,
-		148
+		255,
+		255,
+		255
 	],
 	"camera_position": [
-		-120,
-		820
+		40,
+		670
 	],
 	"sing_duration": 4,
 	"scale": 1

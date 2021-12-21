@@ -669,6 +669,9 @@ class FunkinLua {
 			switch(type.toLowerCase()) {
 				case 'dad': charType = 1;
 				case 'gf' | 'girlfriend': charType = 2;
+				case 'dad1': charType = 3;
+				case 'dad2': charType = 4;
+				case 'dad3': charType = 5;
 			}
 			PlayState.instance.addCharacterToList(name, charType);
 		});

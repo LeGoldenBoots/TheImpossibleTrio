@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-96,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "cool sing left"
+		},
+		{
+			"offsets": [
+				-111,
+				-198
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "cool sing right"
+		},
+		{
+			"offsets": [
+				-123,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "cool DOWN note"
+		},
+		{
+			"offsets": [
+				-130,
+				-165
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "cool UP NOTE"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				70,
+				800
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "BOB idle dance",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				171,
+				840
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "BOB Sing Note UP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				88,
+				731
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "BOB Sing Note DOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				140,
+				756
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "BOB Sing Note RIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				161,
+				789
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "BOB Sing Note LEFT",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "possible/wireframe/bobEX",
+	"position": [
+		-240,
+		960
+	],
+	"healthicon": "possibletrio",
+	"flip_x": false,
+	"healthbar_colors": [
+		194,
+		230,
+		148
+	],
+	"camera_position": [
+		-130,
+		-690
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

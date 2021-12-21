@@ -17,9 +17,8 @@ using StringTools;
 class CoolUtil
 {
 	public static var difficulties:Array<String> = [
-		'No Gimmicks',
-		'Canon',
-		'Impossible'
+		'Impossible',
+		'Canon'
 	];
 	public static var defaultDifficulty:String = 'Canon';
 

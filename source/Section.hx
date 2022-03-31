@@ -10,9 +10,6 @@ typedef SwagSection =
 	var bpm:Float;
 	var changeBPM:Bool;
 	var altAnim:Bool;
-	var bobSection:Bool;
-	var bambiSection:Bool;
-	var spongSection:Bool;
 }
 
 class Section
@@ -23,10 +20,6 @@ class Section
 	public var gfSection:Bool = false;
 	public var typeOfSection:Int = 0;
 	public var mustHitSection:Bool = true;
-	public var spongSection:Bool = false;
-	public var bambiSection:Bool = false;
-	public var bobSection:Bool = false;
-
 
 	/**
 	 *	Copies the first section into the second section!

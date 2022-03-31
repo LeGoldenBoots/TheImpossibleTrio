@@ -23,6 +23,9 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
+#if android
+import flixel.FlxCamera;
+#end
 import Controls;
 
 using StringTools;
@@ -120,7 +123,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 				checkboxGroup.add(checkbox);
 				optionText.xAdd += 80;
 			} else {
-				var valueText:AttachedText = new AttachedText(optionsArray[i].getValue(), optionText.width + 80, true, 0.8);
+				var valueText:AttachedText = new AttachedText('' + optionsArray[i].getValue(), optionText.width + 80, true, 0.8);
 				valueText.sprTracker = optionText;
 				valueText.copyAlpha = true;
 				valueText.ID = i;
@@ -132,6 +135,15 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 
 		changeSelection();
 		reloadCheckboxes();
+
+        #if android
+		addVirtualPad(FULL, A_B_C);
+		
+		var camcontrol = new FlxCamera();
+		FlxG.cameras.add(camcontrol);
+		camcontrol.bgColor.alpha = 0;
+		_virtualpad.cameras = [camcontrol];
+		#end
 	}
 
 	var nextAccept:Int = 5;
@@ -149,9 +161,13 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 		}
 
 		if (controls.BACK) {
+			#if android
+			MusicBeatState.resetState();
+			#else
 			close();
+			#end
 			ClientPrefs.saveSettings();
-			FlxG.sound.play(Paths.sound('cancelMenu'));
+			FlxG.sound.play(Paths.sound('cancelMenu'));                  
 		}
 
 		if(nextAccept <= 0)
@@ -243,7 +259,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET#if android || _virtualpad.buttonC.justPressed #end)
 			{
 				for (i in 0...optionsArray.length)
 				{

@@ -7,7 +7,6 @@ import flixel.math.FlxMath;
 import flixel.util.FlxColor;
 import flash.display.BitmapData;
 import editors.ChartingState;
-import flixel.util.FlxTimer;
 
 using StringTools;
 
@@ -30,11 +29,13 @@ class Note extends FlxSprite
 	public var noteType(default, set):String = null;
 
 	public var eventName:String = '';
+	public var eventLength:Int = 0;
 	public var eventVal1:String = '';
 	public var eventVal2:String = '';
 
 	public var colorSwap:ColorSwap;
 	public var inEditor:Bool = false;
+	public var gfNote:Bool = false;
 	private var earlyHitMult:Float = 0.5;
 
 	public static var swagWidth:Float = 160 * 0.7;
@@ -42,8 +43,6 @@ class Note extends FlxSprite
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
-
-	var boyfriend:Boyfriend;
 
 	// Lua shit
 	public var noteSplashDisabled:Bool = false;
@@ -89,8 +88,8 @@ class Note extends FlxSprite
 			switch(value) {
 				case 'Hurt Note':
 					ignoreNote = mustPress;
-					reloadNote('SPONG');
-					noteSplashTexture = 'SPONGnoteSplashes';
+					reloadNote('HURT');
+					noteSplashTexture = 'HURTnoteSplashes';
 					colorSwap.hue = 0;
 					colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
@@ -100,30 +99,10 @@ class Note extends FlxSprite
 						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
-				case 'Bob Heal Note':
-					reloadNote('BOBHEAL');
-					noteSplashTexture = 'CUSTOMnoteSplashes';
-					colorSwap.hue = 0;
-					colorSwap.saturation = 0;
-					colorSwap.brightness = 0;
-					if(isSustainNote) {
-						health += 0.6;
-						missHealth = 0.10;
-					} else {
-						health = 0.4;
-						missHealth = 1;
-					}
-						hitCausesMiss = false;
-				case 'Health Drain Note':
-					ignoreNote = mustPress;
-					reloadNote('HURT');
-					noteSplashTexture = 'HURTnoteSplashes';
-					colorSwap.hue = 0;
-					colorSwap.saturation = 0;
-					colorSwap.brightness = 0;
-					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
+				case 'GF Sing':
+					gfNote = true;
 			}
 			noteType = value;
 		}

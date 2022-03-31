@@ -20,7 +20,8 @@ using StringTools;
 class Paths
 {
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
-	inline public static var VIDEO_EXT = "mp4";
+	
+	inline public static var VIDEO_EXT = #if android "html" #else "mp4" #end;//Webview Extension Can Open MP4 by HTML
 
 	#if MODS_ALLOWED
 	#if (haxe >= "4.0.0")
@@ -42,7 +43,9 @@ class Paths
 		'videos',
 		'images',
 		'stages',
-		'weeks'
+		'weeks',
+		'fonts',
+		'scripts'
 	];
 	#end
 
@@ -139,7 +142,7 @@ class Paths
 			return file;
 		}
 		#end
-		return 'assets/videos/$key.$VIDEO_EXT';
+		return Main.getDataPath() + 'assets/videos/$key.$VIDEO_EXT';
 	}
 
 	static public function sound(key:String, ?library:String):Dynamic
@@ -214,6 +217,16 @@ class Paths
 	{
 		#if MODS_ALLOWED
 		var imageToReturn:FlxGraphic = addCustomGraphic(key);
+		/*
+		//SHADOWMARIO TEST THIS IM NOT AT HOME RN.
+
+		//k so for sum reason even when a current mod is loaded, it will only pull from the graphics key shit : (((
+		//so i made it test if one exists in the mod folder or the mod directories.
+		var pathshit = modsImages(key)
+		if (FileSystem.exists(path)){
+			imageToReturn = BitmapData.fromFile(path);
+		}
+		*/
 		if(imageToReturn != null) return imageToReturn;
 		#end
 		return getPath('images/$key.png', IMAGE, library);
@@ -227,21 +240,21 @@ class Paths
 			return File.getContent(mods(key));
 		#end
 
-		if (FileSystem.exists(getPreloadPath(key)))
-			return File.getContent(getPreloadPath(key));
+		if (FileSystem.exists(Main.getDataPath() + getPreloadPath(key)))
+			return File.getContent(Main.getDataPath() + getPreloadPath(key));
 
 		if (currentLevel != null)
 		{
 			var levelPath:String = '';
 			if(currentLevel != 'shared') {
 				levelPath = getLibraryPathForce(key, currentLevel);
-				if (FileSystem.exists(levelPath))
-					return File.getContent(levelPath);
+				if (FileSystem.exists(Main.getDataPath() + levelPath))
+					return File.getContent(Main.getDataPath() + levelPath);
 			}
 
 			levelPath = getLibraryPathForce(key, 'shared');
-			if (FileSystem.exists(levelPath))
-				return File.getContent(levelPath);
+			if (FileSystem.exists(Main.getDataPath() + levelPath))
+				return File.getContent(Main.getDataPath() + levelPath);
 		}
 		#end
 		return Assets.getText(getPath(key, TEXT));
@@ -249,7 +262,13 @@ class Paths
 
 	inline static public function font(key:String)
 	{
-		return 'assets/fonts/$key';
+		#if MODS_ALLOWED
+		var file:String = modsFont(key);
+		if(FileSystem.exists(file)) {
+			return file;
+		}
+		#end
+		return Main.getDataPath() + 'assets/fonts/$key';
 	}
 
 	inline static public function fileExists(key:String, type:AssetType, ?ignoreMods:Bool = false, ?library:String)
@@ -316,7 +335,11 @@ class Paths
 	}
 
 	inline static public function mods(key:String = '') {
-		return 'mods/' + key;
+		return Main.getDataPath() + 'mods/' + key;
+	}
+	
+	inline static public function modsFont(key:String) {
+		return modFolders('fonts/' + key);
 	}
 
 	inline static public function modsJson(key:String) {
@@ -358,7 +381,7 @@ class Paths
 				return fileToCheck;
 			}
 		}
-		return 'mods/' + key;
+		return Main.getDataPath() + 'mods/' + key;
 	}
 
 	static public function getModDirectories():Array<String> {

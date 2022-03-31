@@ -49,6 +49,8 @@ typedef DialogueLine = {
 	var text:Null<String>;
 	var boxState:Null<String>;
 	var speed:Null<Float>;
+	//var skipdelay:Null<Int>;
+	//var append:Null<Bool>; //thinkin bout having some rpg type text shit.
 }
 
 class DialogueCharacter extends FlxSprite
@@ -67,7 +69,8 @@ class DialogueCharacter extends FlxSprite
 	public var startingPos:Float = 0; //For center characters, it works as the starting Y, for everything else it works as starting X
 	public var isGhost:Bool = false; //For the editor
 	public var curCharacter:String = 'bf';
-
+	public var skiptimer = 0;
+	public var skipping = 0;
 	public function new(x:Float = 0, y:Float = 0, character:String = null)
 	{
 		super(x, y);
@@ -87,11 +90,11 @@ class DialogueCharacter extends FlxSprite
 		#if MODS_ALLOWED
 		var path:String = Paths.modFolders(characterPath);
 		if (!FileSystem.exists(path)) {
-			path = Paths.getPreloadPath(characterPath);
+			path = Main.getDataPath() + Paths.getPreloadPath(characterPath);
 		}
 
 		if(!FileSystem.exists(path)) {
-			path = Paths.getPreloadPath('images/dialogue/' + DEFAULT_CHARACTER + '.json');
+			path = Main.getDataPath() + Paths.getPreloadPath('images/dialogue/' + DEFAULT_CHARACTER + '.json');
 		}
 		rawJson = File.getContent(path);
 
@@ -287,7 +290,20 @@ class DialogueBoxPsych extends FlxSpriteGroup
 			bgFade.alpha += 0.5 * elapsed;
 			if(bgFade.alpha > 0.5) bgFade.alpha = 0.5;
 
-			if(PlayerSettings.player1.controls.ACCEPT) {
+                        #if android
+	                var justTouched:Bool = false;
+
+	                for (touch in FlxG.touches.list)
+	                {
+		             justTouched = false;
+
+		             if (touch.justPressed){
+			         justTouched = true;
+		             }
+	                }
+	                #end
+
+		             if(PlayerSettings.player1.controls.ACCEPT#if android || justTouched #end) {
 				if(!daText.finishedText) {
 					if(daText != null) {
 						daText.killTheTimer();

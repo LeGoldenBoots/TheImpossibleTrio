@@ -16,11 +16,14 @@ using StringTools;
 
 class CoolUtil
 {
-	public static var difficulties:Array<String> = [
-		'Impossible',
-		'Canon'
+	public static var defaultDifficulties:Array<String> = [
+		'Easy',
+		'Normal',
+		'Hard'
 	];
-	public static var defaultDifficulty:String = 'Canon';
+	public static var defaultDifficulty:String = 'Normal'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
+
+	public static var difficulties:Array<String> = [];
 
 	public static function getDifficultyFilePath(num:Null<Int> = null)
 	{
@@ -63,7 +66,18 @@ class CoolUtil
 
 		return daList;
 	}
+	public static function listFromString(string:String):Array<String>
+	{
+		var daList:Array<String> = [];
+		daList = string.trim().split('\n');
 
+		for (i in 0...daList.length)
+		{
+			daList[i] = daList[i].trim();
+		}
+
+		return daList;
+	}
 	public static function dominantColor(sprite:flixel.FlxSprite):Int{
 		var countByColor:Map<Int, Int> = [];
 		for(col in 0...sprite.frameWidth){

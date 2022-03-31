@@ -24,6 +24,7 @@ typedef WeekFile =
 	var startUnlocked:Bool;
 	var hideStoryMode:Bool;
 	var hideFreeplay:Bool;
+	var difficulties:String;
 }
 
 class WeekData {
@@ -42,6 +43,7 @@ class WeekData {
 	public var startUnlocked:Bool;
 	public var hideStoryMode:Bool;
 	public var hideFreeplay:Bool;
+	public var difficulties:String;
 
 	public static function createWeekFile():WeekFile {
 		var weekFile:WeekFile = {
@@ -54,7 +56,8 @@ class WeekData {
 			freeplayColor: [146, 113, 253],
 			startUnlocked: true,
 			hideStoryMode: false,
-			hideFreeplay: false
+			hideFreeplay: false,
+			difficulties: ''
 		};
 		return weekFile;
 	}
@@ -71,6 +74,7 @@ class WeekData {
 		startUnlocked = weekFile.startUnlocked;
 		hideStoryMode = weekFile.hideStoryMode;
 		hideFreeplay = weekFile.hideFreeplay;
+		difficulties = weekFile.difficulties;
 	}
 
 	public static function reloadWeekFiles(isStoryMode:Null<Bool> = false)
@@ -79,8 +83,8 @@ class WeekData {
 		weeksLoaded.clear();
 		#if MODS_ALLOWED
 		var disabledMods:Array<String> = [];
-		var modsListPath:String = 'modsList.txt';
-		var directories:Array<String> = [Paths.mods(), Paths.getPreloadPath()];
+		var modsListPath:String = Main.getDataPath() + 'modsList.txt';
+		var directories:Array<String> = [Paths.mods(), Main.getDataPath() + Paths.getPreloadPath()];
 		var originalLength:Int = directories.length;
 		if(FileSystem.exists(modsListPath))
 		{
@@ -120,7 +124,7 @@ class WeekData {
 		var originalLength:Int = directories.length;
 		#end
 
-		var sexList:Array<String> = CoolUtil.coolTextFile(Paths.getPreloadPath('weeks/weekList.txt'));
+		var sexList:Array<String> = CoolUtil.coolTextFile(Main.getDataPath() + Paths.getPreloadPath('weeks/weekList.txt'));
 		for (i in 0...sexList.length) {
 			for (j in 0...directories.length) {
 				var fileToCheck:String = directories[j] + 'weeks/' + sexList[i] + '.json';
@@ -148,29 +152,50 @@ class WeekData {
 		for (i in 0...directories.length) {
 			var directory:String = directories[i] + 'weeks/';
 			if(FileSystem.exists(directory)) {
-				for (file in FileSystem.readDirectory(directory)) {
-					var path = haxe.io.Path.join([directory, file]);
-					if (!sys.FileSystem.isDirectory(path) && file.endsWith('.json')) {
-						var weekToCheck:String = file.substr(0, file.length - 5);
-						if(!weeksLoaded.exists(weekToCheck)) {
-							var week:WeekFile = getWeekFile(path);
-							if(week != null) {
-								var weekFile:WeekData = new WeekData(week);
-								if(i >= originalLength) {
-									weekFile.folder = directories[i].substring(Paths.mods().length, directories[i].length-1);
-								}
+				var listOfWeeks:Array<String> = CoolUtil.coolTextFile(directory + 'weekList.txt');
+				for (daWeek in listOfWeeks)
+				{
+					var path:String = directory + daWeek + '.json';
+					if(sys.FileSystem.exists(path))
+					{
+						addWeek(daWeek, path, directories[i], i, originalLength);
+					}
+				}
 
-								if((isStoryMode && !weekFile.hideStoryMode) || (!isStoryMode && !weekFile.hideFreeplay)) {
-									weeksLoaded.set(weekToCheck, weekFile);
-									weeksList.push(weekToCheck);
-								}
-							}
-						}
+				for (file in FileSystem.readDirectory(directory))
+				{
+					var path = haxe.io.Path.join([directory, file]);
+					if (!sys.FileSystem.isDirectory(path) && file.endsWith('.json'))
+					{
+						addWeek(file.substr(0, file.length - 5), path, directories[i], i, originalLength);
 					}
 				}
 			}
 		}
 		#end
+	}
+
+	private static function addWeek(weekToCheck:String, path:String, directory:String, i:Int, originalLength:Int)
+	{
+		if(!weeksLoaded.exists(weekToCheck))
+		{
+			var week:WeekFile = getWeekFile(path);
+			if(week != null)
+			{
+				var weekFile:WeekData = new WeekData(week);
+				if(i >= originalLength)
+				{
+					#if MODS_ALLOWED
+					weekFile.folder = directory.substring(Paths.mods().length, directory.length-1);
+					#end
+				}
+				if((PlayState.isStoryMode && !weekFile.hideStoryMode) || (!PlayState.isStoryMode && !weekFile.hideFreeplay))
+				{
+					weeksLoaded.set(weekToCheck, weekFile);
+					weeksList.push(weekToCheck);
+				}
+			}
+		}
 	}
 
 	private static function getWeekFile(path:String):WeekFile {

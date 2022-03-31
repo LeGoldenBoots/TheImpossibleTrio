@@ -29,6 +29,7 @@ class CreditsState extends MusicBeatState
 	private var creditsStuff:Array<Array<String>> = [];
 
 	var bg:FlxSprite;
+	var descBox:FlxSprite;	
 	var descText:FlxText;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
@@ -62,35 +63,27 @@ class CreditsState extends MusicBeatState
 				}
 				creditsStuff.push(['']);
 			}
-		}
+		};
+		var folder = "";
+			var creditsFile:String = Paths.mods('data/credits.txt');
+			if (FileSystem.exists(creditsFile))
+			{
+				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
+				for(i in firstarray)
+				{
+					var arr:Array<String> = i.replace('\\n', '\n').split("::");
+					if(arr.length >= 5) arr.push(folder);
+					creditsStuff.push(arr);
+				}
+				creditsStuff.push(['']);
+			}
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['The Impossible Trio Team'],
-			['LeGoldenBoots',		'legoldenboots',	'Main Programmer',					'https://www.youtube.com/channel/UCysojweWJ_X3iaTAMAvNFCQ',	'E53778'],
-			['fidget boii',			'fidget',			'Assistant Programmer',				'https://www.youtube.com/channel/UCknRWVWQvDHf8RXXiuzAN3A',	'0BFF00'],
-			['kyso',				'kyso',			'Main Charter',						'https://www.youtube.com/channel/UCPfz7f4ecd_gLhfx7Uy2Sew/featured',		'FF0BFF00'],
-			['WizardMantis',		'mantis',			'AGONY & Survival (TPTF) Charter',	'https://www.youtube.com/c/WizardMantis441',		'0BFF00'],
-			[''],
-			['Mashup Creators and Musicians'],
-			['rapparep lol',	'rap',				'The Impossible Trio Mashup Creator',			'https://www.youtube.com/c/rappareplol',		'0BFF00'],
-			['ZellersGord',		'zellers',			'Survival Mashup Creator',						'https://www.youtube.com/channel/UCBt17RPvXOBQTn7u82Ip1Hw',		'0BFF00'],
-			['Aussie Axe',		'aussieaxe',		'AGONY Mashup Creator',							'https://www.youtube.com/channel/UCBt17RPvXOBQTn7u82Ip1Hw',		'0BFF00'],
-			['That Pizza Tower Fan',	'tptf',		'Survival TPTF Composer',				'https://www.youtube.com/channel/UC7-0Iemmc842O6HYtVYl7MQ',		'0BFF00'],
-			['Gilbert de Guzman',	'gdg',			'Not Impossible Mashup Creator',			'https://www.youtube.com/channel/UC9IzRYupvv6K-XOl24G9uXA',		'0BFF00'],
-			['Pap7Swag45',	'pap',					'The Swapped Trio Mashup Creator',			'https://www.youtube.com/channel/UCMuLDoH6hRY5orCLvFUCpag',		'0BFF00'],
-			['Mods Featured'],
-			['Vs. Bob',					'bob',					'Press Enter to Go to the Mods page!',			'https://gamebanana.com/mods/285296',		'0BFF00'],
-			['Vs. Spong',				'spong',				'Press Enter to Go to the Mods page!',			'https://twitter.com/bmv277/status/1461877047169626118',		'0BFF00'],
-			['Vs. Dave and Bambi',		'daveandbambers',		'Press Enter to Go to the Mods page!',			'https://gamebanana.com/mods/43201',		'0BFF00'],
-			['Vs. Ron',					'ron',					'Press Enter to Go to the Mods page!',			'https://gamebanana.com/mods/309980',		'0BFF00'],
-			['Vs. Hex',					'hex',					'Press Enter to Go to the Mods page!',			'https://gamebanana.com/mods/44225',		'0BFF00'],
-			['Bikini Bottom Funkin',	'spongebob',			'Press Enter to Go to the Mods page!',			'https://gamebanana.com/mods/314145',		'0BFF00'],
-			['Vs. Garcello',			'garcello',				'Press Enter to Go to the Mods page!',			'https://gamebanana.com/mods/166531',		'0BFF00'],
-			['Vs. Bob and Bosip',		'bobbosip',				'Press Enter to Go to the Mods page!',			'https://drive.google.com/file/d/1zKeHKtsVx1pdG4UDK3RSnTNRIVyP9WSm/view',		'FF0BFF00'],
-			[''],
+			['Psych Engine Android'],
+			['M.A. Jigsaw',		    'majigsaw',		    'Main Coder of The Port',	 'https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ',	    'F73838'],
 			['Psych Engine Team'],
-			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'FFDD33'],
+			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',					'https://twitter.com/river_oaken',		'C30085'],
 			['bb-panzu',			'bb-panzu',			'Additional Programmer of Psych Engine',				'https://twitter.com/bbsub3',			'389A58'],
 			[''],
@@ -146,6 +139,10 @@ class CreditsState extends MusicBeatState
 			}
 		}
 
+	    descBox = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
+		descBox.alpha = 0.6;
+		add(descBox);
+
 		descText = new FlxText(50, 600, 1180, "", 32);
 		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		descText.scrollFactor.set();
@@ -155,6 +152,11 @@ class CreditsState extends MusicBeatState
 		bg.color = getCurrentBGColor();
 		intendedColor = bg.color;
 		changeSelection();
+
+        #if android
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 		super.create();
 	}
 
@@ -230,6 +232,12 @@ class CreditsState extends MusicBeatState
 			}
 		}
 		descText.text = creditsStuff[curSelected][2];
+		descText.screenCenter(Y);
+		descText.y += 270;
+
+		descBox.setPosition(descText.x - 10, descText.y - 10);
+		descBox.setGraphicSize(Std.int(descText.width + 20), Std.int(descText.height + 25));
+		descBox.updateHitbox();
 	}
 
 	function getCurrentBGColor() {

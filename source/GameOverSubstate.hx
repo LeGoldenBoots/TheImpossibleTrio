@@ -9,6 +9,9 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+#if android
+import flixel.FlxCamera;
+#end
 
 class GameOverSubstate extends MusicBeatSubstate
 {
@@ -70,8 +73,18 @@ class GameOverSubstate extends MusicBeatSubstate
 		camFollowPos = new FlxObject(0, 0, 1, 1);
 		camFollowPos.setPosition(FlxG.camera.scroll.x + (FlxG.camera.width / 2), FlxG.camera.scroll.y + (FlxG.camera.height / 2));
 		add(camFollowPos);
+
+                #if android
+		addVirtualPad(NONE, A_B);
+		
+		var camcontrol = new FlxCamera();
+		FlxG.cameras.add(camcontrol);
+		camcontrol.bgColor.alpha = 0;
+		_virtualpad.cameras = [camcontrol];
+		#end
 	}
 
+	var isFollowingAlready:Bool = false;
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
@@ -104,10 +117,11 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (boyfriend.animation.curAnim.name == 'firstDeath')
 		{
-			if(boyfriend.animation.curAnim.curFrame == 12)
+			if(boyfriend.animation.curAnim.curFrame >= 12 && !isFollowingAlready)
 			{
 				FlxG.camera.follow(camFollowPos, LOCKON, 1);
 				updateCamera = true;
+				isFollowingAlready = true;
 			}
 
 			if (boyfriend.animation.curAnim.finished)
